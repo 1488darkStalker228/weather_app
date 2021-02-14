@@ -1,0 +1,119 @@
+.city-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  align-items: center;
+  gap: 16px;
+  padding: $padding;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr min-content;
+  }
+  @media (max-width: 320px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  &__link {
+    position: relative;
+  }
+
+  &__name {
+    font-size: $fontMedium;
+    font-weight: $fontSemiBold;
+    @media (max-width: 767px) {
+      font-size: $fontMediumSmall;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      overflow: hidden;
+    }
+    @media (max-width: 320px) {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  &__temp {
+    justify-content: space-between;
+    align-items: center;
+    font-size: $fontMedium;
+    font-weight: $fontBold;
+    svg {
+      width: 35px;
+      height: 35px;
+      margin-left: $margin;
+    }
+    @media (max-width: 767px) {
+      font-size: $fontMediumSmall;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    @media (max-width: 320px) {
+      order: 1;
+    }
+  }
+
+  &__icon-wrap {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__compare-btn {
+    background: $colorGray;
+    width: 100px;
+    height: 35px;
+    margin: 0 $margin * 4;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: $fontBold;
+    &_active {
+      background: $colorCompare;
+      color: $colorText;
+    }
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &__compare-icon {
+    display: none;
+    margin: 0 $margin * 2;
+    &_active {
+      svg {
+        fill: $colorCompare;
+      }
+    }
+    @media (max-width: 767px) {
+      display: flex;
+    }
+    @media (max-width: 320px) {
+      margin: 0;
+    }
+  }
+
+  &__add-fav {
+    cursor: pointer;
+    svg {
+      width: 35px;
+      height: 35px;
+    }
+    &_active {
+      svg {
+        fill: $colorCompare;
+      }
+    }
+    @media (max-width: 767px) {
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    @media (max-width: 320px) {
+      order: 2;
+    }
+  }
+}

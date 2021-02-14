@@ -1,0 +1,11 @@
+.pnf {
+  min-height: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: $fontMediumSmall;
+  font-weight: $fontSemiBold;
+  a {
+    text-decoration: underline;
+  }
+}

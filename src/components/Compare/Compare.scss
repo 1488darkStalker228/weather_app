@@ -1,0 +1,85 @@
+.compare {
+  flex-grow: 1;
+  overflow-y: scroll;
+
+  .container {
+    height: fit-content;
+  }
+
+  .btn {
+    margin: $margin auto;
+  }
+
+  &__item-wrap {
+    width: 100%;
+    margin: $margin * 2 0 $margin * 4 0;
+    justify-content: center;
+
+    .weather-item {
+      cursor: default;
+      border-bottom: 1px solid;
+      &:last-child {
+        border: 0
+      }
+
+      @media (max-width: 767px) {
+
+        &__temp {
+          font-size: $fontMediumSmall;
+        }
+
+        &__description {
+          font-size: $fontMinimal;
+        }
+      }
+      @media (max-width: 320px) {
+
+        &__description {
+          padding: 0;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+      }
+
+      &__border {
+        z-index: 0;
+      }
+    }
+  }
+
+  &__city-first {
+    position: relative;
+    flex-direction: column;
+    &::after {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 1px;
+      background: $colorText;
+      height: 100%;
+      right: 0;
+    }
+    @media (max-width: 767px) {
+      width: 50%;
+    }
+  }
+
+  &__city-second {
+    flex-direction: column;
+    @media (max-width: 767px) {
+      width: 50%;
+    }
+  }
+
+  &__name {
+    justify-content: center;
+    border-bottom: 1px solid;
+    font-size: $fontMediumSmall;
+    font-weight: $fontBold;
+    @media (max-width: 320px) {
+      font-size: 14px;
+    }
+  }
+}

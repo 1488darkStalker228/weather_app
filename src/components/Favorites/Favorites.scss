@@ -1,0 +1,155 @@
+.favorites {
+  flex-grow: 1;
+  overflow-y: scroll;
+
+  &__empty-filters {
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    font-size: $fontSmall;
+    span {
+      font-weight: 500;
+      font-size: 18px;
+    }
+  }
+
+  &__empty-fav {
+    display: none;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    font-size: $fontSmall;
+    span {
+      font-weight: 500;
+      font-size: 18px;
+    }
+    a {
+      text-decoration: underline;
+    }
+    &_show {
+      display: flex;
+    }
+  }
+
+  &__title-wrap {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    margin-top: $margin * 2;
+  }
+
+  &__filters-btn {
+    cursor: pointer;
+    align-self: center;
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &__filters-icon {
+    cursor: pointer;
+    display: none;
+    @media (max-width: 767px) {
+      display: flex;
+      align-self: center;
+    }
+  }
+
+  &__filters-popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    background: $colorGray;
+    z-index: 3;
+    transition: transform 0.5s;
+    transform: translateY(-100%);
+
+    &_open {
+      transform: translateY(0);
+    }
+    .container {
+      flex-grow: 1;
+    }
+  }
+
+  &__popup-header {
+    height: 50px;
+    justify-content: space-between;
+    border-bottom: 1px solid #000000;
+    align-items: center;
+    span {
+      color: #000000;
+      font-size: $fontMediumSmall;
+      font-weight: $fontBold;
+    }
+  }
+
+  &__popup-close {
+    cursor: pointer;
+  }
+
+  &__popup-body {
+    flex-direction: column;
+  }
+
+  &__temp {
+    margin: $margin * 2 0;
+    font-size: $fontMedium;
+    font-weight: $fontBold;
+    color: #000000;
+  }
+
+  &__weather-type {
+    @extend .favorites__temp;
+  }
+
+  &__select {
+    font-size: $fontMediumSmall;
+    padding: 4px;
+  }
+
+  &__weather-icons {
+    margin-bottom: 8px;
+  }
+
+  &__icon-wrap {
+    margin-right: $margin * 2;
+    cursor: pointer;
+    &:last-child {
+      margin: 0;
+    }
+    svg {
+      fill: #000000;
+      width: 35px;
+      height: 35px;
+    }
+    &_selected {
+      svg {
+        fill: $colorCompare;
+      }
+    }
+    @media (max-width: 320px) {
+      margin-right: $margin;
+    }
+  }
+
+  &__btn-wrap {
+    margin-top: $margin * 2;
+    align-items: center;
+  }
+
+  &__reset-btn {
+    margin-left: $margin * 2;
+    background: none;
+    color: #585858;
+    font-weight: $fontBold;
+    font-size: $fontSmall;
+    text-decoration: underline;
+  }
+
+  .cities__item-wrap {
+    margin: 0;
+  }
+}

@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 830px;
+  width: 100%;
+  padding: 0 10px;
+  margin: 0 auto;
+  min-height: 100%;
+}
+
+.title {
+  font-size: $fontLarge;
+  font-weight: $fontBold;
+  @media (max-width: 767px) {
+    font-size: $fontMedium;
+  }
+}
+
+.scroll-style {
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.63);
+    border-radius: 15px;
+  }
+}
+
+.btn {
+  width: 140px;
+  min-height: 35px;
+  border-radius: 20px;
+  font-weight: $fontBold;
+  font-size: 14px;
+  background: $colorGray;
+}
+
+.btn-compare {
+  background: $colorCompare;
+  color: $colorText;
+  &_show {
+
+  }
+}
+
+.btn-active {
+  background: linear-gradient(90deg, rgba(153, 82, 97, 0.82) 0%, #A72340 100%);
+  color: $colorText;
+}
+
+@keyframes glare {
+  0% {
+    left: -90px;
+  }
+
+  30% {
+    left: 180px;
+  }
+
+  100% {
+    left: 180px;
+  }
+}
+
+.beautiful-btn {
+  position: relative;
+  overflow: hidden;
+
+  &__glare {
+    animation: glare 3s infinite;
+    position: absolute;
+    top: -100%;
+    left: -90px;
+    width: 50px;
+    height: 300%;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.71) 50%, transparent 100%);
+    transform: rotate(45deg);
+  }
+}
+
+svg {
+  fill: $colorText;
+  pointer-events: none;
+}
